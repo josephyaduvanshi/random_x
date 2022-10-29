@@ -98,7 +98,7 @@ If you considered this project useful, please consider giving it a :star: on Git
 
 ## Active Contributors
 
- - **Joseph Yaduvanshi**
+ - **[Joseph Yaduvanshi](https://github.com/josephyaduvanshi)**
 
 **Any new Contributors are welcomed.**
 
