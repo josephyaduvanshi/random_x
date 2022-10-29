@@ -12,7 +12,7 @@
 [![Likes](https://badges.bar/random_x/likes)](https://pub.dev/packages/random_x/score)
 [![Popularity](https://badges.bar/random_x/popularity)](https://pub.dev/packages/random_x/score)
 
-### Show some :heart: and star the repo :star :star.
+### Show some :heart: and star the repo :star: :star:.
 
 [![GitHub followers](https://img.shields.io/github/followers/josephyaduvanshi.svg?style=social&label=Follow)](https://github.com/josephyaduvanshi/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/Josefyaduvanshi.svg?style=social)](https://twitter.com/Josefyaduvanshi)
