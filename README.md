@@ -12,7 +12,7 @@
 [![Likes](https://badges.bar/random_x/likes)](https://pub.dev/packages/random_x/score)
 [![Popularity](https://badges.bar/random_x/popularity)](https://pub.dev/packages/random_x/score)
 
-### Show some :heart: and star the repo.
+### Show some :heart: and star the repo :star :star.
 
 [![GitHub followers](https://img.shields.io/github/followers/josephyaduvanshi.svg?style=social&label=Follow)](https://github.com/josephyaduvanshi/)
 [![Twitter Follow](https://img.shields.io/twitter/follow/Josefyaduvanshi.svg?style=social)](https://twitter.com/Josefyaduvanshi)
@@ -21,7 +21,7 @@
 
 ---
 
-## [STAR THE REPO](https://github.com/josephyaduvanshi/random_x)
+## [STAR THE REPO :star](https://github.com/josephyaduvanshi/random_x)
 
 ---
 
@@ -78,7 +78,7 @@ random_x is **100% free** and **open source**. We encourage and endorse an engag
 
 ### :heart: Found this project useful?
 
-If you considered this project useful, please consider giving it a:star: on Github, sharing it on social media, and giving it a like on PUB.dev.
+If you considered this project useful, please consider giving it a :star: on Github, sharing it on social media, and giving it a like on PUB.dev.
 
 ---
 
