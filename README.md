@@ -23,7 +23,7 @@
 
 ---
 
-[**random_x**](https://random_x.dev/) is a 100% free Flutter open-source minimalist UI Framework built with <a href="https://flutter.dev/" target="_blank">Flutter SDK</a> to make Flutter development easier and more joyful than ever.
+[**random_x**](https://pub.dev/packages/random_x) is a 100% free Flutter open-source minimalist UI Framework built with <a href="https://flutter.dev/" target="_blank">Flutter SDK</a> to make Flutter development easier and more joyful than ever.
 
 ```dart
 Text("RandomX The Library For All Of Your Random Needs"),
@@ -84,7 +84,7 @@ If you considered this project useful, please consider giving it a :star: on Git
 
 ### Joseph Yaduvanshi
 
-TECH ENTHUSIAST || APP DEVELOPMENT ❤️ || eatSleepCode — repeat👨🏻‍💻 | Okay BYEE!
+**TECH ENTHUSIAST || APP DEVELOPMENT ❤️ || eatSleepCode — repeat👨🏻‍💻 | Okay BYEE!**
 
 <a href="https://josefyaduvanshi.medium.com/"><img src="https://img.icons8.com/color-glass/96/000000/medium-monogram.png" width="60"></a>
 <a href="https://twitter.com/josefyaduvanshi"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
@@ -98,8 +98,8 @@ TECH ENTHUSIAST || APP DEVELOPMENT ❤️ || eatSleepCode — repeat👨🏻‍�
 
 ## Active Contributors
 
-none
-Any new Contributors are welcomed.
+**NONE**
+**Any new Contributors are welcomed.**
 
 ## Copyright-and-license
 
