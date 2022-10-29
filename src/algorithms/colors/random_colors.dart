@@ -9,8 +9,6 @@ String generateHex() {
   return hexColor;
 }
 
-
-
 generateRandomHexColorCode_({
   int count = 1,
   bool uniqueList = true,

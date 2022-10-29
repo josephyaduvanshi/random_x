@@ -1,5 +1,9 @@
 import 'dart:math';
 
+/// Generates a random IPV4 address.
+///
+/// Returns:
+///   A random IPV4 address.
 generateRandomIPV4_() {
   const ipv4Length = 10;
   final ipUnitValue = [];
@@ -13,6 +17,10 @@ generateRandomIPV4_() {
   return generatedAddress;
 }
 
+/// Generates a random IPv6 address.
+///
+/// Returns:
+///   A randomly generated IPv6 address.
 generateRandomIPV6_() {
   int ipv6Length = pow(16, 4).toInt();
   final ipUnitValue = [];
@@ -26,6 +34,10 @@ generateRandomIPV6_() {
   return generatedAddress;
 }
 
+/// Generates a random MAC address.
+///
+/// Returns:
+///   A randomly generated MAC address.
 generateRandomMAC_() {
   int macLength = pow(16, 2).toInt();
   final macUnitValue = [];
@@ -38,4 +50,3 @@ generateRandomMAC_() {
       '${macUnitValue[0]}${macUnitValue[1]}:${macUnitValue[2]}${macUnitValue[3]}:${macUnitValue[4]}${macUnitValue[5]}:${macUnitValue[6]}${macUnitValue[7]}:${macUnitValue[8]}${macUnitValue[9]}:${macUnitValue[10]}${macUnitValue[11]}';
   return generatedAddress;
 }
-

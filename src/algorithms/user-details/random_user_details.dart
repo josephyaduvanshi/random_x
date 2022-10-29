@@ -1,15 +1,33 @@
-
 import 'dart:math';
-
-// import 'generate_strong_password.dart';
-// import '../misc/random_char_string.dart';
-
 import '../../database/dictionary.dart';
 
-// RandomStrongPassword rsp = RandomStrongPassword();
-// RandomCharString rcs = RandomCharString();
+/// Generate a random age between 0 and 100 and return it as a string.
+///
+/// Returns:
+///   A string
+String generateRandomAge() {
+  Random rnd = Random();
+  int age = rnd.nextInt(100);
+  return age.toString();
+}
 
-List<List<String>> lists = const [FIRST_NAMES, LAST_NAMES];
+/// Creating a list of FIRST_NAMES AND LAST_NAMES which
+/// BY THE WAY WE ARE GETTING FROM THE DICTIONARY DIRECTORY.
+List<List<String>> lists = const [
+  DictionaryDatabase.FIRST_NAMES,
+  DictionaryDatabase.LAST_NAMES
+];
+
+/// It generates a random name by randomly selecting a part from each list, and then joining them
+/// together with a separator
+///
+/// Args:
+///   repeatParts (bool): Whether or not to allow the same part of the name to be repeated. Defaults to
+/// false
+///   separator (String): The string to separate the parts of the name with. Defaults to
+///
+/// Returns:
+///   A string
 String generateName_({
   bool repeatParts = false,
   String separator = ' ',
@@ -25,6 +43,16 @@ String generateName_({
   return name.join(separator);
 }
 
+/// It generates a random name, and if you want more than one, it will generate a list of random names
+///
+/// Args:
+///   count (int): The number of names to generate. Defaults to 1
+///   repeatParts (bool): If true, the name can have the same part twice. Defaults to false
+///   uniqueList (bool): If true, the list of names will not contain duplicates. Defaults to true
+///   separator (String): The separator between the parts of the name. Defaults to
+///
+/// Returns:
+///   A list of names
 generateNames_({
   int count = 1,
   bool repeatParts = false,
@@ -48,6 +76,17 @@ generateNames_({
   return names;
 }
 
+/// It generates a random username.
+///
+/// Args:
+///   count (int): The number of usernames you want to generate. Defaults to 1
+///   randomNumberLength (int): The length of the random number that will be appended to the end of the
+/// username. Defaults to 2
+///   uniqueList (bool): If true, the list will be unique. Defaults to true
+///   usernameLength (int): The length of the username.
+///
+/// Returns:
+///   A list of usernames
 generateUsername_({
   int count = 1,
   int randomNumberLength = 2,
@@ -56,9 +95,11 @@ generateUsername_({
 }) {
   List<String> usernames = [];
   for (int i = 0; i < count; i++) {
-    String adjective = ADJECTIVES[Random().nextInt(ADJECTIVES.length)];
+    String adjective = DictionaryDatabase
+        .ADJECTIVES[Random().nextInt(DictionaryDatabase.ADJECTIVES.length)];
     // String firstNames = FIRST_NAMES[Random().nextInt(FIRST_NAMES.length)];
-    String lastName = LAST_NAMES[Random().nextInt(LAST_NAMES.length)];
+    String lastName = DictionaryDatabase
+        .LAST_NAMES[Random().nextInt(DictionaryDatabase.LAST_NAMES.length)];
     String number = Random()
         .nextInt(translateLengthToNumber(randomNumberLength))
         .toString();
@@ -80,6 +121,26 @@ generateUsername_({
   return usernames;
 }
 
+/// It takes a string of digits, and returns a string of digits with commas inserted between every three
+/// digits
+///
+/// Args:
+///   input (String): The string to be formatted.
+///
+/// Returns:
+///   A function that takes a string and returns a string.
+String formatStringDigitWithComma({required String input}) {
+  return input.replaceAllMapped(
+      RegExp(r'(\d{1,3})(?=(\d{3})+(?!\d))'), (Match m) => '${m[1]},');
+}
+
+/// It takes a length and returns a number
+///
+/// Args:
+///   length (int): The length of the password.
+///
+/// Returns:
+///   The number of digits in the number.
 int translateLengthToNumber(int length) {
   try {
     switch (length) {
@@ -111,6 +172,92 @@ int translateLengthToNumber(int length) {
   }
 }
 
+/// Generate a random salary with a default length of 5
+///
+/// Args:
+///   length (int): The length of the salary string. Defaults to 5
+///
+/// Returns:
+///   A list of strings.
+String generateRandomSalary({
+  int length = 5,
+}) {
+  String salary = '';
+  for (int i = 0; i < length; i++) {
+    salary += Random().nextInt(9).toString();
+  }
+  return formatStringDigitWithComma(input: '\$$salary');
+}
+
+/// Generates a random height in either metric or imperial units.
+///
+/// Args:
+///   isMetric (bool): If true, the height will be in meters. If false, the height will be in feet and
+/// inches. Defaults to false
+///   withCentimeters (bool): If true, the height will be returned with the height in centimeters.
+/// Defaults to true
+///
+/// Returns:
+///   A string that is a random height in either metric or imperial units.
+String generateRandomHeight({
+  bool isMetric = false,
+  bool withCentimeters = true,
+}) {
+  String height = '';
+  String heightInCentimeters = '';
+  if (isMetric) {
+    height += Random().nextInt(2).toString();
+    height += '.';
+    height += Random().nextInt(9).toString();
+    height += 'm';
+    if (withCentimeters) {
+      heightInCentimeters = (double.parse(height.replaceAll("m", '')) * 100)
+          .ceilToDouble()
+          .toString();
+      return '$height (${heightInCentimeters}cm)';
+    }
+    return height;
+  } else {
+    height += (Random().nextInt(4) + 4).toString();
+    height += '\'';
+    height += Random().nextInt(12).toString();
+    height += '"';
+
+    if (withCentimeters) {
+      heightInCentimeters = heightToCentimeters(height);
+      return '$height (${heightInCentimeters}cm)';
+    }
+    return height;
+  }
+}
+
+/// It takes a string of height in feet and inches, converts it to centimeters, and returns a string of
+/// the height in centimeters
+///
+/// Args:
+///   height: The height in feet and inches.
+///
+/// Returns:
+///   A string
+String heightToCentimeters(final height) {
+  final getFoot = double.parse(height.split('\'')[0].toString()).toDouble();
+  final getInches =
+      double.parse(height.split('\'')[1].toString().replaceAll('"', ''))
+          .toDouble();
+  return ((getFoot * 30.48) + (getInches * 2.54)).ceilToDouble().toString();
+}
+
+/// Generate a random email address
+///
+/// Args:
+///   count (int): The number of emails you want to generate. Defaults to 1
+///   randomNumberLength (int): The length of the random number that will be appended to the username.
+/// Defaults to 2
+///   uniqueList (bool): If true, the list of emails will be unique. Defaults to true
+///   domain (String): The domain of the email address. Defaults to gmail.com
+///
+/// Returns:
+///   A list of emails
 generateRandomEmail_({
   int count = 1,
   int randomNumberLength = 2,
@@ -138,6 +285,40 @@ generateRandomEmail_({
   return emails;
 }
 
+/// It generates a random weight in pounds and kilograms.
+///
+/// Args:
+///   min (int): The minimum weight you want to generate. Defaults to 40
+///   max (int): The maximum value of the random number. Defaults to 300
+///   withKG (bool): If true, the weight will be returned in pounds and kilograms. Defaults to true
+///
+/// Returns:
+///   A string with a random weight in pounds and kilograms.
+String generateRandomWeight({
+  int min = 40,
+  int max = 300,
+  bool withKG = true,
+}) {
+  String weight = '';
+  String weightInKG = '';
+  weight += (Random().nextInt(max) + min).toString();
+  weight =
+      '$weight${(Random().nextDouble().toStringAsFixed(2)).replaceAll("0", "")}';
+  if (withKG) {
+    weightInKG = (double.parse(weight) * 0.453592).toStringAsFixed(2);
+    return '$weight pounds (${weightInKG}kg)';
+  }
+  return '$weight pounds';
+}
+
+/// Generate a random number or a list of random numbers
+///
+/// Args:
+///   count (int): The number of random numbers you want to generate. Defaults to 1
+///   uniqueList (bool): If true, the list will contain unique numbers. Defaults to true
+///
+/// Returns:
+///   A list of random numbers
 generateRandomNumber_({
   int count = 1,
   bool uniqueList = true,
@@ -157,4 +338,8 @@ generateRandomNumber_({
   }
 
   return numbers;
+}
+
+void main(List<String> args) {
+  print(generateRandomWeight());
 }
