@@ -11,6 +11,8 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/josephyaduvanshi/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
 [![Likes](https://badges.bar/random_x/likes)](https://pub.dev/packages/random_x/score)
 [![Popularity](https://badges.bar/random_x/popularity)](https://pub.dev/packages/random_x/score)
+![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat)
+[![support](https://img.shields.io/badge/platform-flutter%7Cflutter%20web%7Cdart%20vm-ff69b4.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
 
 ### Show some :heart: and star the repo :star: :star:.
 
