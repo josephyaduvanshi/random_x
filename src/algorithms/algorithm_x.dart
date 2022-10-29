@@ -9,6 +9,7 @@ export '../algorithms/user-details/generate_strong_password.dart';
 export '../algorithms/user-details/random_addresses.dart';
 export '../algorithms/user-details/random_user_details.dart';
 export '../algorithms/user-details/complete_user_details.dart';
+export '../algorithms/user-details/random_avatar.dart';
 export '../algorithms/user-details/random_dates.dart';
 export '../algorithms/user-details/random_ssn.dart';
 export '../algorithms/user-details/generate_random_credit_cards.dart';

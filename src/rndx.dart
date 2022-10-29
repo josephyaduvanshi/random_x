@@ -24,6 +24,26 @@ enum RandomCharStringType {
   specialCharASCII
 }
 
+/// Creating an enum called GravatarImage.
+enum GravatarImage {
+  nf,
+  mp,
+  identicon,
+  monsterid,
+  wavatar,
+  retro,
+  robohash,
+  blank,
+}
+
+/// Creating an enum called GravatarRating.
+enum GravatarRating {
+  g,
+  pg,
+  r,
+  x,
+}
+
 mixin RndX {
   /// A getter for the Random class.
   Random get rnd;
@@ -992,6 +1012,38 @@ mixin RndX {
         count: count,
         uniqueList: uniqueList,
       );
+
+  /// It returns a Gravatar image URL.
+  ///
+  /// Args:
+  ///  - email (String): The email address of the user.
+  ///  - size (int): The size of the image in pixels.
+  ///  - defaultImage (GravatarImage): The default image to use if the user doesn't have a gravatar.
+  ///  - forceDefault (bool): If true, always return the default image, never the user's image. Defaults to
+  /// false
+  ///  - fileExtension (bool): If true, the url will have a file extension (ex: .jpg). Defaults to false
+  ///  - rating (GravatarRating): The maximum rating to allow.
+  static String getRandomAvatarUrl({
+    String? email,
+    int? size,
+    GravatarImage? defaultImage,
+    bool forceDefault = false,
+    bool fileExtension = false,
+    GravatarRating? rating,
+  }) =>
+      Gravatar(email: email).imageUrl(
+        size: size,
+        defaultImage: defaultImage,
+        forceDefault: forceDefault,
+        fileExtension: fileExtension,
+        rating: rating,
+      );
+
+  /// It returns the json url of the avatar.
+  static String getavatarJsonUrl() => Gravatar().jsonUrl();
+
+  /// It returns the QR code URL of the avatar.
+  static String getAvatarQRUrl() => Gravatar().qrUrl();
 
   /// It generates a random IPV4 address.
   static String generateRandomIPV4() => generateRandomIPV4_();
