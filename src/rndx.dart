@@ -24,7 +24,7 @@ enum RandomCharStringType {
   specialCharASCII
 }
 
-/// Creating an enum called GravatarImage.
+/// Creating an enum called GravatarImage for avatar type.
 enum GravatarImage {
   nf,
   mp,
@@ -36,7 +36,7 @@ enum GravatarImage {
   blank,
 }
 
-/// Creating an enum called GravatarRating.
+/// Creating an enum called GravatarRating for Age Rating.
 enum GravatarRating {
   g,
   pg,
