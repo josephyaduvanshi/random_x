@@ -58,7 +58,7 @@ random_x is known for :
 
 ---
 
-<a href="https://www.buymeacoffee.com/josefyaduvanshi"><img src="https://storiesfrompalestine.info/wp-content/uploads/2020/09/BuyMeACoffee_blue@2x.png"  width="500" height="200" alt="RandomX"></a>
+<a href="https://www.buymeacoffee.com/josefyaduvanshi"><img src="https://storiesfrompalestine.info/wp-content/uploads/2020/09/BuyMeACoffee_blue@2x.png"  width="650"  alt="RandomX"></a>
 
 ---
 
