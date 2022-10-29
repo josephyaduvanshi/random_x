@@ -6,9 +6,9 @@
 
 [![RandomX](https://img.shields.io/badge/random_x-firm-orange)](https://github.com/josephyaduvanshi/random_x)
 [![Pub release](https://img.shields.io/pub/v/random_x.svg?style=flat-square)](https://pub.dev/packages/random_x)
-[![GitHub Release Date](https://img.shields.io/github/release-date/iampawan/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
+[![GitHub Release Date](https://img.shields.io/github/release-date/josephyaduvanshi/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
 [![GitHub issues](https://img.shields.io/github/issues/josephyaduvanshi/randomX.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x/issues)
-[![GitHub top language](https://img.shields.io/github/languages/top/iampawan/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
+[![GitHub top language](https://img.shields.io/github/languages/top/josephyaduvanshi/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
 [![Likes](https://badges.bar/random_x/likes)](https://pub.dev/packages/random_x/score)
 [![Popularity](https://badges.bar/random_x/popularity)](https://pub.dev/packages/random_x/score)
 
