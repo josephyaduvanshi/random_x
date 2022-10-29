@@ -4,7 +4,7 @@ import 'algorithms/algorithm_x.dart';
 /// Defining type of user agent.
 enum UserAgentType { web, mobile, tablet, macOs, none }
 
-/// Defining type of credit cards.
+/// Defining type of credit crds.
 enum CreditCardType {
   americanExpress,
   dinersClub,
@@ -477,6 +477,55 @@ mixin RndX {
   static identifyCreditCard(String cardNumber) =>
       CardGenerator.identifyCardType(cardNumber);
 
+  /// It generates a random CompleteUserDetailsModel object.
+  /// It includes the following:
+  /// - Full Name
+  /// - Gender
+  /// - race
+  /// - religion
+  /// - birthday
+  /// - zodiac sign
+  /// - email
+  /// - street address
+  /// - city
+  /// - state
+  /// - country
+  /// - postal code
+  /// - phone number
+  /// - ssn
+  /// - height
+  /// - weight
+  /// - hair color
+  /// - eye color
+  /// - blood type
+  /// - civil status
+  /// - educational background
+  /// - disease history
+  /// - employment status
+  /// - monthly salary
+  /// - occupation
+  /// - vehicle
+  /// - hobbies
+  /// - favorite color
+  /// - favorite food
+  /// - favorite music
+  /// - favorite movie
+  /// - favorite book
+  /// - favorite sports
+  /// - favorite genre
+  /// - credit card number
+  /// - credit card type
+  /// - credit card expiration date
+  /// - credit card cvv
+  /// - username
+  /// - password
+  /// - website
+  /// - device
+  /// - ip address
+  /// - mac address
+  static CompleteUserDetailsModel randomCompletePersonDetails() =>
+      CompleteUserDetailsGen.generate();
+
   /// It generates a random email address.
   ///
   /// Args:
@@ -644,23 +693,312 @@ mixin RndX {
   /// It returns a random user agent string.
   ///
   /// Args:
-  ///   count (int): The number of user agents you want to get. Defaults to 1
-  ///   type (UserAgentType): The type of user agent you want to get. Defaults to UserAgentType
+  ///   count (int): The number of user agents you want to generate. Defaults to 1
+  ///   type (UserAgentType): The type of user agent you want to generate. Defaults to UserAgentType
+  ///
+  /// Returns:
+  ///   A random user agent string.
   static getRandomUA(
           {int count = 1, UserAgentType type = UserAgentType.none}) =>
-      RandomUA().getRandomUA(count: count, type: type);
+      RandomUA.getRandomUA(count: count, type: type);
+
+  /// Returns true if the given string is a valid UUID.
+  ///
+  /// Args:
+  ///   uuid (String): The UUID to validate.
+  ///   version (String): The version of the UUID to validate against. If no version is specified, any
+  /// valid UUID is accepted.
+  static bool isUUID({required String uuid, String? version}) =>
+      Uuid.isUUID(uuid: uuid, version: version);
+
+  /// > Generate a random UUID (Universally Unique Identifier)
+  /// > Version 4 UUIDs are pseudo-random.
+  static String genUUID() => Uuid.uuidV4();
+
+  /// Generates a GUID.
+  ///
+  /// Args:
+  ///  - allUpperCase (bool): Whether the GUID should be all upper case or not. Defaults to false
+  ///  - length (int): The length of the GUID. Default is 32. Defaults to 32
+  static String guid({bool allUpperCase = false, int length = 32}) =>
+      GUID().generateGUID(allUpperCase: allUpperCase, length: length);
+
+  /// It generates a random hash string in base64 format.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  ///   allLowerCase (bool): If true, the hash will be all lowercase. Defaults to false
+  static String randomHashBase64({
+    int length = 32,
+    bool allUpperCase = false,
+    bool allLowerCase = false,
+  }) =>
+      RandomHash.randomHashBase64(
+        length: length,
+        allUpperCase: allUpperCase,
+        allLowerCase: allLowerCase,
+      );
+
+  /// It generates a random MD5 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomMD5hashV1({int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomMD5hashV1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random MD5 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomMD5hashV2({int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomMD5hashV2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA256 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA256Hashv1(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA256Hashv1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA256 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA256Hashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA256Hashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA512 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA512Hashv1(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA512Hashv1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA512 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA512Hashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA512Hashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA1 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA1Hashv1(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA1Hashv1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA1 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA1Hashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA1Hashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA384 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA384Hashv1(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA384Hashv1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA384 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA384Hashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA384Hashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA224 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA224Hashv1(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA224Hashv1(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random SHA224 hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomSHA224Hashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomSHA224Hashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random HMAC hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomHMACHash({int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomHMACHash(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random HMAC hash.
+  ///
+  /// Args:
+  ///   length (int): The length of the hash. Defaults to 32
+  ///   allUpperCase (bool): If true, the hash will be all uppercase. Defaults to false
+  static String randomHMACHashv2(
+          {int length = 32, bool allUpperCase = false}) =>
+      RandomHash.randomHMACHashv2(
+        length: length,
+        allUpperCase: allUpperCase,
+      );
+
+  /// It generates a random verification code.
+  ///
+  /// Args:
+  /// -  length (int): The length of the verification code. Defaults to 9
+  /// -  useNumbers (bool): If true, the code will contain numbers. Defaults to true
+  /// -  useSpecialCharacters (bool): If true, the code will contain special characters. Defaults to false
+  /// -  useAlphabet (bool): If true, the code will contain alphabets. Defaults to false
+  /// -  useDashes (bool): If true, the code will be separated by dashes. Defaults to true
+  /// -  dashPosition (int): The position of the dash in the verification code. Defaults to 3
+  static String randomVerifcationCodes({
+    int length = 9,
+    bool useNumbers = true,
+    bool useSpecialCharacters = false,
+    bool useAlphabet = false,
+    bool useDashes = true,
+    int dashPosition = 3,
+  }) =>
+      RandomMiscellaneous.generateRandomVerificationCodeCode(
+        length: length,
+        useNumbers: useNumbers,
+        useSpecialCharacters: useSpecialCharacters,
+        useAlphabet: useAlphabet,
+        useDashes: useDashes,
+        dashPosition: dashPosition,
+      );
+
+  /// Generates a random IMEI number.
+  static String genIMEINumber() =>
+      RandomMiscellaneous.generateRandomIMEINumber();
+
+  /// Generates a random Zoom ID.
+  static String randomZoomID() => RandomMiscellaneous.generateRandomZoomID();
+
+  /// It generates a random document ID for Firebase.
+  static String firebaseRandomDocumentID() =>
+      RandomMiscellaneous.generateFirebaseRandomDocumentID();
+
+  /// Generates a random Google API key.
+  static String randomGoogleAPIKey() =>
+      RandomMiscellaneous.generateRandomGoogleAPIKey();
+
+  /// Generates a random Google Client ID.
+  static String randomGoogleClientID() =>
+      RandomMiscellaneous.generateRandomGoogleClientID();
+
+  /// Generates a random Google Client Secret
+  static String randomGoogleClientSecret() =>
+      RandomMiscellaneous.generateRandomGoogleClientSecret();
+
+  /// Generates a random Google Project ID.
+  static String randomGoogleProjectID() =>
+      RandomMiscellaneous.generateRandomGoogleProjectID();
+
+  /// Generates a random Google Storage bucket name
+  static String randomGoogleStorageBucket() =>
+      RandomMiscellaneous.generateRandomGoogleStorageBucket();
+
+  /// It generates a GUID with a separator.
+  ///
+  /// Args:
+  /// -  separator (String): The separator to use between the GUID sections. Defaults to -
+  /// -  allUpperCase (bool): If true, the GUID will be all upper case. Defaults to false
+  /// -  length (int): The length of the GUID.
+  static String guidWithSeparator({
+    String separator = '-',
+    bool allUpperCase = false,
+    required int length,
+  }) =>
+      GUID().guidWithSeparator(
+        separator: separator,
+        allUpperCase: allUpperCase,
+        length: length,
+      );
 
   // static Color get randomColor => Color(hexStringToInt());
 
   /// It generates a random phone number.
-  static generatePhoneNumber() => RandomUserDetailsGen.generateRandomNumber_();
+  ///
+  /// Args:
+  ///   count (int): The number of phone numbers to generate. Defaults to 1
+  ///   uniqueList (bool): If you want to generate a list of unique phone numbers, set this to true.
+  /// Defaults to true
+  static generatePhoneNumber({int count = 1, bool uniqueList = true}) =>
+      RandomUserDetailsGen.generateRandomNumber_(
+        count: count,
+        uniqueList: uniqueList,
+      );
 
   /// It generates a random IPV4 address.
-  static generateRandomIPV4() => generateRandomIPV4_();
+  static String generateRandomIPV4() => generateRandomIPV4_();
 
   /// Generate a random IPV6 address.
-  static generateRandomIPV6() => generateRandomIPV6_();
+  static String generateRandomIPV6() => generateRandomIPV6_();
 
   /// Generate a random MAC address.
-  static generateRandomMAC() => generateRandomMAC_();
+  static String generateRandomMAC() => generateRandomMAC_();
 }

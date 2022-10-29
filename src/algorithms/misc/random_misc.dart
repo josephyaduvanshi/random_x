@@ -16,7 +16,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A string of random characters.
-  String generateRandomVerificationCodeCode({
+  static String generateRandomVerificationCodeCode({
     int length = 9,
     bool useNumbers = true,
     bool useSpecialCharacters = false,
@@ -51,7 +51,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A string of 15 random numbers.
-  String generateRandomIMEINumber() {
+  static String generateRandomIMEINumber() {
     String imei = '';
     for (int i = 0; i < 15; i++) {
       imei += Random().nextInt(9).toString();
@@ -63,7 +63,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random number between 0 and 99999999.
-  String generateRandomZoomID() {
+  static String generateRandomZoomID() {
     return Random().nextInt(99999999).toString();
   }
 
@@ -71,7 +71,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 20 characters.
-  String generateFirebaseRandomDocumentID() {
+  static String generateFirebaseRandomDocumentID() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 20);
   }
@@ -80,7 +80,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 39 characters.
-  String generateRandomGoogleAPIKey() {
+  static String generateRandomGoogleAPIKey() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 39);
   }
@@ -89,7 +89,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 18 characters.
-  String generateRandomGoogleClientID() {
+  static String generateRandomGoogleClientID() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 18);
   }
@@ -99,7 +99,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 24 characters.
-  String generateRandomGoogleClientSecret() {
+  static String generateRandomGoogleClientSecret() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 24);
   }
@@ -109,7 +109,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 12 characters.
-  String generateRandomGoogleProjectID() {
+  static String generateRandomGoogleProjectID() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 12);
   }
@@ -118,7 +118,7 @@ class RandomMiscellaneous {
   ///
   /// Returns:
   ///   A random string of 24 characters.
-  String generateRandomGoogleStorageBucket() {
+  static String generateRandomGoogleStorageBucket() {
     return RndX.randomString(
         type: RandomCharStringType.alphaNumerical, length: 24);
   }

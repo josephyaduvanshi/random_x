@@ -11,7 +11,7 @@ class RandomUA {
   ///
   /// Returns:
   ///   A list of user agents.
-  getRandomMacUA({int count = 1}) {
+  static getRandomMacUA({int count = 1}) {
     Random random = Random();
     List<String> uaList = DictionaryDatabase.userAgentMac;
     uaList.shuffle(random);
@@ -34,7 +34,7 @@ class RandomUA {
   ///
   /// Returns:
   ///   A list of user agent strings.
-  getRandomMobileUa({int count = 1}) {
+  static getRandomMobileUa({int count = 1}) {
     List<String> uaLists = DictionaryDatabase.userAgentMobile;
     Random random = Random();
     uaLists.shuffle(random);
@@ -57,7 +57,7 @@ class RandomUA {
   ///
   /// Returns:
   ///   A list of user agent strings.
-  getRandomTabletUa({int count = 1}) {
+  static getRandomTabletUa({int count = 1}) {
     List<String> uaLists = DictionaryDatabase.userAgentTablet;
     Random random = Random();
     uaLists.shuffle(random);
@@ -80,7 +80,7 @@ class RandomUA {
   ///
   /// Returns:
   ///   A list of user agents.
-  getRandomWEBUA({int count = 1}) {
+  static getRandomWEBUA({int count = 1}) {
     List<String> uaLists = DictionaryDatabase.userAgentWeb;
     Random random = Random();
     uaLists.shuffle(random);
@@ -103,7 +103,7 @@ class RandomUA {
   ///
   /// Returns:
   ///   A list of strings.
-  genRandomUAAny({int count = 1}) {
+  static genRandomUAAny({int count = 1}) {
     List<String> randomUa = DictionaryDatabase.userAgentMac +
         DictionaryDatabase.userAgentMobile +
         DictionaryDatabase.userAgentTablet +
@@ -126,12 +126,11 @@ class RandomUA {
   ///
   /// Args:
   ///   count (int): The number of user agents you want to generate. Defaults to 1
-  ///   type (UserAgentType): UserAgentType.none, UserAgentType.web, UserAgentType.mobile,
-  /// UserAgentType.tablet, UserAgentType.macOs. Defaults to UserAgentType.none
+  ///   type (UserAgentType): The type of user agent you want to generate. Defaults to UserAgentType
   ///
   /// Returns:
-  ///   A list of user agents.
-  getRandomUA({int count = 1, UserAgentType type = UserAgentType.none}) {
+  ///   A random user agent string.
+  static getRandomUA({int count = 1, UserAgentType type = UserAgentType.none}) {
     if (type == UserAgentType.none) {
       return genRandomUAAny(count: count);
     } else if (type == UserAgentType.web) {

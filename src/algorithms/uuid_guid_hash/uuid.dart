@@ -85,7 +85,7 @@ class Uuid {
   ///
   /// Returns:
   ///   A boolean value.
-  bool isUUID({
+  static bool isUUID({
     required String uuid,
     String? version,
   }) {
@@ -94,7 +94,7 @@ class Uuid {
   }
 
   /// A map of regular expressions that are used to validate UUIDs.
-  var uuidRegex = {
+  static Map<String, RegExp> uuidRegex = {
     '3': RegExp(
         r'^[0-9A-F]{8}-[0-9A-F]{4}-3[0-9A-F]{3}-[0-9A-F]{4}-[0-9A-F]{12}$',
         caseSensitive: false),

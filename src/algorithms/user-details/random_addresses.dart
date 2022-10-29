@@ -94,8 +94,8 @@ class Coordinates {
       );
 
   Map<String, dynamic> toMap() => {
-        "lat": lat ,
-        "lng": lng ,
+        "lat": lat,
+        "lng": lng,
       };
 }
 

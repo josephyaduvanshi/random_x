@@ -529,7 +529,7 @@ class RandomUserDetailsGen {
   ///   A random movie genre from the list of movie genres.
 
   static String generateRandomFavMovie_() {
-    List<String> favMovieList = DictionaryDatabase.movieGenre;
+    List<String> favMovieList = DictionaryDatabase.moviesList;
     return favMovieList[Random().nextInt(favMovieList.length)];
   }
 
