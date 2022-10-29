@@ -29,7 +29,7 @@
 [**random_x**](https://random_x.dev/) is a 100% free Flutter open-source minimalist UI Framework built with <a href="https://flutter.dev/" target="_blank">Flutter SDK</a> to make Flutter development easier and more joyful than ever.
 
 ```dart
-"Welcome to random_x".text.white.xl4.bold.center.makeCentered().box.roundedLg.red500.shadow2xl.make().whHalf(context).centered();
+Text("RandomX The Library For All Of Your Random Needs"),
 ```
 
 ---
@@ -106,4 +106,4 @@ Any new Contributors are welcomed.
 
 ## Copyright-and-license
 
-Code and documentation Copyright 2022 [Joseph Yaduvanshi](https://pawan.live). Code released under the [Apache License](./LICENSE). Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
+Code and documentation Copyright 2022 [Joseph Yaduvanshi](https://github.com/josephyaduvanshi). Code released under the [Apache License](./LICENSE). Docs released under [Creative Commons](https://creativecommons.org/licenses/by/3.0/).
