@@ -11,7 +11,6 @@
 [![GitHub top language](https://img.shields.io/github/languages/top/iampawan/random_x.svg?style=flat-square)](https://github.com/josephyaduvanshi/random_x)
 [![Likes](https://badges.bar/random_x/likes)](https://pub.dev/packages/random_x/score)
 [![Popularity](https://badges.bar/random_x/popularity)](https://pub.dev/packages/random_x/score)
-<a href="https://discord.gg/9tXYvNq"><img src="https://img.shields.io/discord/746087597759004835.svg?logo=discord&color=blue" alt="Discord"></a>
 
 ### Show some :heart: and star the repo.
 
@@ -89,7 +88,7 @@ If you considered this project useful, please consider giving it a:star: on Gith
 
 TECH ENTHUSIAST || APP DEVELOPMENT ❤️ || eatSleepCode — repeat👨🏻‍💻 | Okay BYEE!
 
-<a href="https://medium.com/@imthepk"><img src="https://github.com/aritraroy/social-icons/blob/master/medium-icon.png?raw=true" width="60"></a>
+<a href="https://josefyaduvanshi.medium.com/"><img src="https://img.icons8.com/color-glass/96/000000/medium-monogram.png" width="60"></a>
 <a href="https://twitter.com/josefyaduvanshi"><img src="https://github.com/aritraroy/social-icons/blob/master/twitter-icon.png?raw=true" width="60"></a>
 <a href="https://in.linkedin.com/in/joseph-yaduvanshi-75250a233"><img src="https://github.com/aritraroy/social-icons/blob/master/linkedin-icon.png?raw=true" width="60"></a>
 
@@ -97,7 +96,7 @@ TECH ENTHUSIAST || APP DEVELOPMENT ❤️ || eatSleepCode — repeat👨🏻‍�
 
 > If you found this project helpful or you learned something from the source code and want to thank me, consider buying me a cup of :coffee:
 >
-> - [Bitcoin](1JDas41DHqkfZb6VmXRndpQqUxNTTL6TFw)
+> - [Bitcoin Address] 1JDas41DHqkfZb6VmXRndpQqUxNTTL6TFw
 
 ## Active Contributors
 
