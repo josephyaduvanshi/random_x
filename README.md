@@ -21,10 +21,6 @@
 
 ---
 
-## [STAR THE REPO :star](https://github.com/josephyaduvanshi/random_x)
-
----
-
 [**random_x**](https://random_x.dev/) is a 100% free Flutter open-source minimalist UI Framework built with <a href="https://flutter.dev/" target="_blank">Flutter SDK</a> to make Flutter development easier and more joyful than ever.
 
 ```dart
@@ -62,7 +58,7 @@ random_x is known for :
 
 ---
 
-<a href="https://www.buymeacoffee.com/josefyaduvanshi"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"></a>
+<a href="https://www.buymeacoffee.com/josefyaduvanshi"><img src="https://storiesfrompalestine.info/wp-content/uploads/2020/09/BuyMeACoffee_blue@2x.png"></a>
 
 ---
 
