@@ -25,7 +25,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A list of DateTime objects.
-  generateRandomDates({
+  static generateRandomDates({
     int count = 1,
     DateTime? start,
     DateTime? end,
@@ -55,7 +55,8 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomDateBetween({required DateTime start, required DateTime end}) {
+  static DateTime randomDateBetween(
+      {required DateTime start, required DateTime end}) {
     int range = end.difference(start).inDays;
     int randomDay = Random().nextInt(range);
     return start.add(Duration(days: randomDay));
@@ -69,7 +70,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomBirthday({
+  static DateTime randomBirthday({
     DateTime? start,
     DateTime? end,
   }) {
@@ -85,7 +86,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomFutureDate({
+  static DateTime randomFutureDate({
     DateTime? start,
     DateTime? end,
   }) {
@@ -104,7 +105,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomPastDate({
+  static DateTime randomPastDate({
     DateTime? start,
     DateTime? end,
   }) {
@@ -119,7 +120,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomFutureDateAfter({required DateTime date}) {
+  static DateTime randomFutureDateAfter({required DateTime date}) {
     DateTime start = date;
     DateTime end = DateTime(2050, 1, 1);
     return randomDateBetween(start: start, end: end);
@@ -132,7 +133,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomPastDateBefore({required DateTime date}) {
+  static DateTime randomPastDateBefore({required DateTime date}) {
     DateTime start = DateTime(1950, 1, 1);
     DateTime end = date;
     return randomDateBetween(start: start, end: end);
@@ -145,7 +146,7 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end dates.
-  DateTime randomDateByAge({required int age}) {
+  static DateTime randomDateByAge({required int age}) {
     DateTime start = DateTime.now().subtract(Duration(days: age * 365));
     DateTime end = DateTime.now().subtract(Duration(days: (age - 1) * 365));
     return randomDateBetween(start: start, end: end);
@@ -158,9 +159,14 @@ class RandomDates {
   ///
   /// Returns:
   ///   A random date between the start and end date.
-  DateTime randomFutureDateByAge({required int age}) {
+  static DateTime randomFutureDateByAge({required int age}) {
     DateTime start = DateTime.now().add(Duration(days: age * 365));
     DateTime end = DateTime.now().add(Duration(days: (age + 1) * 365));
     return randomDateBetween(start: start, end: end);
   }
 }
+
+/// It returns a random date that is within the range of the age provided.
+///
+/// Args:
+///   age (int): The age of the person.

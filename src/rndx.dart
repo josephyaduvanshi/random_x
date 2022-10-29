@@ -106,7 +106,7 @@ mixin RndX {
     bool uniqueList = true,
     String separator = ' ',
   }) =>
-      generateNames_(
+      RandomUserDetailsGen.generateNames_(
         count: count,
         repeatParts: repeatParts,
         uniqueList: uniqueList,
@@ -122,7 +122,7 @@ mixin RndX {
     bool repeatParts = false,
     String separator = ' ',
   }) =>
-      generateName_(
+      RandomUserDetailsGen.generateName_(
         repeatParts: repeatParts,
         separator: separator,
       );
@@ -143,11 +143,339 @@ mixin RndX {
     bool uniqueList = true,
     int? usernameLength,
   }) =>
-      generateUsername_(
+      RandomUserDetailsGen.generateUsername_(
           count: count,
           randomNumberLength: randomNumberLength,
           uniqueList: uniqueList,
           usernameLength: usernameLength);
+
+  /// It generates a random gender.
+  static randomSex() => RandomUserDetailsGen.generateRandomGender_();
+
+  /// It generates a random race.
+  static randomRace() => RandomUserDetailsGen.generateRandomRace_();
+
+  /// It returns a random birthday.
+  ///
+  /// Args:
+  ///   start (DateTime): The start date of the range.
+  ///   end (DateTime): The end date of the range.
+  static randomBirthday({DateTime? start, DateTime? end}) =>
+      RandomDates.randomBirthday(start: start, end: end);
+
+  /// It generates a random date between the start and end date.
+  ///
+  /// Args:
+  ///   start (DateTime): The start date of the range.
+  ///   end (DateTime): The end date of the range.
+  static generateRandomDateBetween(
+          {required DateTime start, required DateTime end}) =>
+      RandomDates.randomDateBetween(start: start, end: end);
+
+  /// It returns a random future date.
+  ///
+  /// Args:
+  ///   start (DateTime): The start date for the random date to be generated.
+  ///   end (DateTime): The end date of the range.
+  static randomFutureDate({DateTime? start, DateTime? end}) =>
+      RandomDates.randomFutureDate(
+        start: start,
+        end: end,
+      );
+
+  /// It returns a random past date.
+  ///
+  /// Args:
+  ///   start (DateTime): The start date of the range.
+  ///   end (DateTime): The end date of the range.
+  static randomPastDate({DateTime? start, DateTime? end}) =>
+      RandomDates.randomPastDate(
+        start: start,
+        end: end,
+      );
+
+  /// It returns a random future date after the date passed in.
+  ///
+  /// Args:
+  ///   date (DateTime): The date to start the random date generation from.
+  static randomFutureDateAfter({required DateTime date}) =>
+      RandomDates.randomFutureDateAfter(date: date);
+
+  /// It returns a random past date before the date passed in.
+  ///
+  /// Args:
+  ///   date (DateTime): The date to generate a random date before.
+  static randomPastDateBefore({required DateTime date}) =>
+      RandomDates.randomPastDateBefore(date: date);
+
+  /// It returns a random date that is within the range of the age provided.
+  ///
+  /// Args:
+  ///   age (int): The age of the person.
+  static randomDateByAge({required int age}) =>
+      RandomDates.randomDateByAge(age: age);
+
+  /// It returns a random future date by age.
+  ///
+  /// Args:
+  ///   age (int): The age of the person.
+  static randomFutureDateByAge({required int age}) =>
+      RandomDates.randomFutureDateByAge(age: age);
+
+  /// Generate a list of random dates between a start and end date
+  ///
+  /// Args:
+  ///   count (int): The number of dates you want to generate. Defaults to 1
+  ///   start (DateTime): The start date of the range.
+  ///   end (DateTime): The end date of the range.
+  ///   uniqueList (bool): If true, the list will be unique. If false, the list will not be unique.
+  /// Defaults to true
+  static generateRandomDates({
+    int count = 1,
+    DateTime? start,
+    DateTime? end,
+    bool uniqueList = true,
+  }) =>
+      RandomDates.generateRandomDates(
+        count: count,
+        start: start,
+        end: end,
+        uniqueList: uniqueList,
+      );
+
+  /// It returns a random zodiac sign.
+  static randomZodiacSign() => RandomUserDetailsGen.randomZodiacSign_();
+
+  /// It generates a random blood group.
+  static randomBloodGroup() => RandomUserDetailsGen.generateRandomBloodType_();
+
+  /// It generates a random hair color.
+  static randomHairColor() => RandomUserDetailsGen.generateRandomHairColor_();
+
+  /// It generates a random eye color.
+  static randomEyeColor() => RandomUserDetailsGen.generateRandomEyeColor_();
+
+  /// It generates a random height.
+  ///
+  /// Args:
+  ///   isMetric (bool): If true, the height will be in metric units. If false, it will be in imperial
+  /// units. Defaults to false
+  ///   withCentimeters (bool): If true, the height will be in the format of 5'10" (178 cm). If false, the
+  /// height will be in the format of 5'10". Defaults to true
+  static randomHeight({bool isMetric = false, bool withCentimeters = true}) =>
+      RandomUserDetailsGen.generateRandomHeight(
+        isMetric: isMetric,
+        withCentimeters: withCentimeters,
+      );
+
+  /// It generates a random weight.
+  ///
+  /// Args:
+  ///   min (int): The minimum weight value. Defaults to 40
+  ///   max (int): The maximum weight value. Defaults to 300
+  ///   withKG (bool): If true, the weight will be returned with the KG unit. Defaults to true
+  static randomWeight({
+    int min = 40,
+    int max = 300,
+    bool withKG = true,
+  }) =>
+      RandomUserDetailsGen.generateRandomWeight(
+        min: min,
+        max: max,
+        withKG: withKG,
+      );
+
+  /// It returns a random address.
+  ///
+  /// Args:
+  ///   count (int): The number of addresses you want to generate. Defaults to 1
+  ///   uniqueList (bool): If true, the list will contain unique addresses. If false, the list may contain
+  /// duplicate addresses. Defaults to true
+  static randomAddressList({int count = 10, bool uniqueList = true}) =>
+      RandomAddresses.getRandomAddressList(
+        count: count,
+        uniqueList: uniqueList,
+      );
+
+  static Address randomAddress() =>
+      RandomAddresses.generateSingleRandomAddress();
+
+  /// Generates a random postal code (UNITED STATES).
+  static randomPostalCode() => RandomAddresses.generateRandomPostalCode();
+
+  /// It returns a list of random addresses based on the street address (UNITED STATES).
+  ///
+  /// Args:
+  ///   address1 (String): The street address of the address you want to get (UNITED STATES).
+  ///   count (int): The number of addresses to return. Defaults to 1
+  static getRandomAddressByStreetAddress(
+          {required String address1, int count = 1}) =>
+      RandomAddresses.getRandomAddressByStreetAddress(
+          address1: address1, count: count);
+
+  /// It returns a list of random addresses in the specified city (UNITED STATES).
+  ///
+  /// Args:
+  ///   city (String): The city you want to get a random address from.
+  ///   count (int): The number of addresses you want to generate. Defaults to 1
+  static getRandomAddressByCity({required String city, int count = 1}) =>
+      RandomAddresses.getRandomAddressByCity(city: city, count: count);
+
+  /// It returns a list of random addresses in the specified state (UNITED STATES).
+  ///
+  /// Args:
+  ///   state (String): The state you want to get a random address from.
+  ///   count (int): The number of addresses you want to generate. Defaults to 1
+  static getRandomAddressByState({required String state, int count = 1}) =>
+      RandomAddresses.getRandomAddressByState(state: state, count: count);
+
+  /// Generates a random city name.
+  static generateRandomCity() => RandomAddresses.generateRandomCity();
+
+  /// It generates a random state.
+  static generateRandomState() => RandomAddresses.generateRandomState();
+
+  /// Generates a random street address.
+  static generateRandomStreetAddress() =>
+      RandomAddresses.generateRandomAddress1();
+
+  /// It generates a random address.
+  static generateRandomAddress2() => RandomAddresses.generateRandomAddress2();
+
+  /// Generates a random latitude.
+  static generateRandomLatitude() => RandomAddresses.generateRandomLatitude();
+
+  /// Generates a random longitude.
+  static generateRandomLongitude() => RandomAddresses.generateRandomLongitude();
+
+  /// Generates a random Social Security Number.
+  ///
+  /// Args:
+  ///   count (int): The number of SSNs to generate. Defaults to 1
+  ///   withdashes (bool): If you want the SSN to be formatted with dashes, set this to true. Defaults to
+  /// false
+  static randomSSN({int count = 1, bool withdashes = false}) =>
+      RandomSSN.generate(
+        count: count,
+        withdashes: withdashes,
+      );
+
+  /// Generates a random salary.
+  ///
+  /// Args:
+  ///   length (int): The length of the salary. Defaults to 5
+  static randomSalary({int length = 5}) =>
+      RandomUserDetailsGen.generateRandomSalary(length: length);
+
+  /// It generates a random civil status.
+  static randomCivilStatus() =>
+      RandomUserDetailsGen.generateRandomCivilStatus_();
+
+  /// It generates a random educational background.
+  static randomEducationalBackground() =>
+      RandomUserDetailsGen.generateRandomEducationalBakground_();
+
+  /// It generates a random religion.
+  static randomReligion() => RandomUserDetailsGen.generateRandomReligion_();
+
+  /// It generates a random disease history.
+  static randomDiseaseHistory() =>
+      RandomUserDetailsGen.generateRandomDiseaseHistory_();
+
+  /// It generates a random employment status.
+  static randomEmploymentStatus() =>
+      RandomUserDetailsGen.generateRandomEmploymentStatus_();
+
+  /// It generates a random occupation.
+  static randomOccupation() => RandomUserDetailsGen.generateRandomOccupation_();
+
+  /// It generates a random vehicle.
+  static randoVehicle() => RandomUserDetailsGen.generateRandomVehicle_();
+
+  /// It generates a random list of hobbies.
+  static randomHobbies() => RandomUserDetailsGen.generateRandomHobbies_();
+
+  /// It generates a random favorite color.
+  static randomFavoriteColor() =>
+      RandomUserDetailsGen.generateRandomFavColor_();
+
+  /// It generates a random favorite food.
+  static randomFavoriteFood() => RandomUserDetailsGen.generateRandomFavFood_();
+
+  /// It generates a random favorite music.
+  static randomFavoriteMusic() =>
+      RandomUserDetailsGen.generateRandomFavMusic_();
+
+  /// It generates a random favorite movie.
+  static randomFavoriteMovie() =>
+      RandomUserDetailsGen.generateRandomFavMovie_();
+
+  /// It generates a random favorite book.
+  static randomFavoriteBook() => RandomUserDetailsGen.generateRandomFavBook_();
+
+  /// It generates a random  favorite sports.
+  static randomFavoriteSports() =>
+      RandomUserDetailsGen.generateRandomFavSports_();
+
+  /// It generates a random favorite genre.
+  static randomFavoriteGenre() =>
+      RandomUserDetailsGen.generateFavouriteGenre_();
+
+  /// It generates a random device detail.
+  static randomDeviceDetail() =>
+      RandomUserDetailsGen.generateRandomDeviceDetail_();
+
+  static randomWebsite({
+    bool https = true,
+  }) =>
+      RandomUserDetailsGen.generateRandomWebsite(
+        https: https,
+      );
+
+  /// It generates a random credit card number with a valid Luhn check digit.
+  ///
+  /// Args:
+  ///   withCustomBin (bool): If you want to use a custom bin, set this to true. Defaults to false
+  ///   customBin (String): This is the first 6 digits of the credit card number. Defaults to 52247
+  ///   ccnType (CreditCardType): This is the type of credit card you want to generate. It can be any of
+  /// the following:. Defaults to CreditCardType
+  static RandomCreditCards randomFullCreditCard({
+    bool withCustomBin = false,
+    String customBin = '52247',
+    CreditCardType ccnType = CreditCardType.random,
+  }) =>
+      CardGenerator.generateFullCC(
+        withCustomBin: withCustomBin,
+        customBin: customBin,
+        ccnType: ccnType,
+      );
+
+  /// It generates a list of random credit cards.
+  ///
+  /// Args:
+  ///   numberOfCards (int): The number of cards you want to generate. Defaults to 10
+  ///   withCustomBin (bool): If you want to use a custom bin, set this to true. Defaults to false
+  ///   customBin (String): This is the first 6 digits of the credit card number. Defaults to 52247
+  ///   ccnType (CreditCardType): CreditCardType.random,. Defaults to CreditCardType
+  static List<RandomCreditCards> randomFullBulkCreditCards({
+    int numberOfCards = 10,
+    bool withCustomBin = false,
+    String customBin = '52247',
+    CreditCardType ccnType = CreditCardType.random,
+  }) =>
+      CardGenerator.generateBulkFullCC(
+        numberOfCards: numberOfCards,
+        withCustomBin: withCustomBin,
+        customBin: customBin,
+        ccnType: ccnType,
+      );
+
+  /// It identifies the type of credit card based on the card number.
+  ///
+  /// Args:
+  ///   cardNumber (String): The card number to identify.
+  static identifyCreditCard(String cardNumber) =>
+      CardGenerator.identifyCardType(cardNumber);
 
   /// It generates a random email address.
   ///
@@ -164,7 +492,7 @@ mixin RndX {
     bool uniqueList = true,
     String domain = 'gmail.com',
   }) =>
-      generateRandomEmail_(
+      RandomUserDetailsGen.generateRandomEmail_(
           count: count,
           randomNumberLength: randomNumberLength,
           uniqueList: uniqueList,
@@ -223,6 +551,11 @@ mixin RndX {
         length: length,
       );
 
+  /// It generates a random string of the specified length and type.
+  ///
+  /// Args:
+  ///   type (RandomCharStringType): The type of string you want to generate.
+  ///   length (int): The length of the string to be generated.
   static randomString(
           {required RandomCharStringType type, required int length}) =>
       RandomCharString().randString(type: type, length: length);
@@ -320,7 +653,7 @@ mixin RndX {
   // static Color get randomColor => Color(hexStringToInt());
 
   /// It generates a random phone number.
-  static generatePhoneNumber() => generateRandomNumber_();
+  static generatePhoneNumber() => RandomUserDetailsGen.generateRandomNumber_();
 
   /// It generates a random IPV4 address.
   static generateRandomIPV4() => generateRandomIPV4_();

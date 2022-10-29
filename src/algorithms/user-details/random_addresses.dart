@@ -44,27 +44,27 @@ class RandomAddressModel {
 /// object
 class Address {
   Address({
-    this.address1,
-    this.address2,
-    this.city,
-    this.state,
-    this.postalCode,
+    required this.address1,
+    required this.address2,
+    required this.city,
+    required this.state,
+    required this.postalCode,
     required this.coordinates,
   });
 
-  final address1;
-  final address2;
-  final city;
-  final state;
-  final postalCode;
-  final Coordinates coordinates;
+  String address1;
+  String address2;
+  String city;
+  String state;
+  String postalCode;
+  Coordinates coordinates;
 
   factory Address.fromMap(Map<String, dynamic> json) => Address(
-        address1: json["address1"],
-        address2: json["address2"],
-        city: json["city"],
-        state: json["state"],
-        postalCode: json["postalCode"],
+        address1: json["address1"] ?? "null",
+        address2: json["address2"] ?? "null",
+        city: json["city"] ?? "null",
+        state: json["state"] ?? "null",
+        postalCode: json["postalCode"] ?? "null",
         coordinates: Coordinates.fromMap(json["coordinates"]),
       );
 
@@ -81,31 +81,31 @@ class Address {
 /// `Coordinates` is a class that has two properties: `lat` and `lng`
 class Coordinates {
   Coordinates({
-    this.lat,
-    this.lng,
+    required this.lat,
+    required this.lng,
   });
 
-  final lat;
-  final lng;
+  double lat;
+  double lng;
 
   factory Coordinates.fromMap(Map<String, dynamic> json) => Coordinates(
-        lat: json["lat"].toDouble(),
-        lng: json["lng"].toDouble(),
+        lat: json["lat"] ?? 0.0,
+        lng: json["lng"] ?? 0.0,
       );
 
   Map<String, dynamic> toMap() => {
-        "lat": lat,
-        "lng": lng,
+        "lat": lat ,
+        "lng": lng ,
       };
 }
 
 class RandomAddresses {
   /// Converting the JSON string into a RandomAddressModel object.
-  final randomAddressModel =
-      randomAddressModelFromMap(DictionaryDatabase.ADDRESSES);
+  static final randomAddressModel =
+      randomAddressModelFromMap(DictionaryDatabase.addresses);
 
   /// A getter that returns the list of addresses from the RandomAddressModel object.
-  List<Address> get addresses => randomAddressModel.addresses;
+  static List<Address> get addresses => randomAddressModel.addresses;
 
   /// It returns a random address from the list of addresses.
   ///
@@ -115,8 +115,9 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A list of addresses
-  getRandomAddress({
-    int count = 1,
+  ///
+  static List<Address> getRandomAddressList({
+    int count = 10,
     bool uniqueList = true,
   }) {
     if (count < 1) {
@@ -131,11 +132,11 @@ class RandomAddresses {
       addresses = addresses.toSet().toList();
     }
 
-    if (count == 1) {
-      return addresses[0];
-    }
-
     return addresses;
+  }
+
+  static Address generateSingleRandomAddress() {
+    return getRandomAddressList(count: 1, uniqueList: true)[0];
   }
 
   /// `generateRandomPostalCode()` returns a random postal code from the list of addresses in the
@@ -143,10 +144,8 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A random postal code from the list of addresses.
-  Address generateRandomPostalCode() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)]
-        .postalCode;
+  static String generateRandomPostalCode() {
+    return generateSingleRandomAddress().postalCode;
   }
 
   /// `generateRandomCity()` returns a random city from the list of addresses in the `randomAddressModel`
@@ -154,60 +153,48 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A random city from the list of addresses.
-  Address generateRandomCity() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)].city;
+  static String generateRandomCity() {
+    return generateSingleRandomAddress().city;
   }
 
   /// It returns a random state from the list of addresses
   ///
   /// Returns:
   ///   A random state from the list of addresses.
-  Address generateRandomState() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)].state;
+  static String generateRandomState() {
+    return generateSingleRandomAddress().state;
   }
 
   /// *It returns a random address from the list of addresses in the RandomAddressModel class.*
   ///
   /// Returns:
   ///   A random address from the list of addresses.
-  Address generateRandomAddress1() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)]
-        .address1;
+  static String generateRandomAddress1() {
+    return generateSingleRandomAddress().address1;
   }
 
   /// It generates a random address2 from the list of addresses in the randomAddressModel.
   ///
   /// Returns:
   ///   A random address2 from the list of addresses.
-  Address generateRandomAddress2() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)]
-        .address2;
+  static String generateRandomAddress2() {
+    return generateSingleRandomAddress().address2;
   }
 
   /// *It returns a random latitude from the list of addresses in the RandomAddressModel class.*
   ///
   /// Returns:
   ///   A random latitude from the list of addresses.
-  Address generateRandomLatitude() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)]
-        .coordinates
-        .lat;
+  static String generateRandomLatitude() {
+    return '${generateSingleRandomAddress().coordinates.lat}';
   }
 
   /// It generates a random longitude.
   ///
   /// Returns:
   ///   A double
-  Address generateRandomLongitude() {
-    return randomAddressModel
-        .addresses[Random().nextInt(randomAddressModel.addresses.length)]
-        .coordinates
-        .lng;
+  static String generateRandomLongitude() {
+    return '${generateSingleRandomAddress().coordinates.lng}';
   }
 
   /// It returns a list of random addresses with the given postal code
@@ -218,7 +205,7 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A list of addresses.
-  List<Address> getRandomAddressByPostalCode(
+  static List<Address> getRandomAddressByPostalCode(
       {required String postalCode, int count = 1}) {
     if (count < 1) {
       throw Exception('Count must be greater than 0');
@@ -246,7 +233,8 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A list of addresses
-  List<Address> getRandomAddressByCity({required String city, int count = 1}) {
+  static List<Address> getRandomAddressByCity(
+      {required String city, int count = 1}) {
     if (count < 1) {
       throw Exception('Count must be greater than 0');
     }
@@ -273,7 +261,7 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A list of addresses
-  List<Address> getRandomAddressByState(
+  static List<Address> getRandomAddressByState(
       {required String state, int count = 1}) {
     if (count < 1) {
       throw Exception('Count must be greater than 0');
@@ -301,7 +289,7 @@ class RandomAddresses {
   ///
   /// Returns:
   ///   A list of addresses
-  List<Address> getRandomAddressByStreetAddress(
+  static List<Address> getRandomAddressByStreetAddress(
       {required String address1, int count = 1}) {
     if (count < 1) {
       throw Exception('Count must be greater than 0');
@@ -321,3 +309,18 @@ class RandomAddresses {
     return addresses;
   }
 }
+
+// void main (){
+//   print(RandomAddresses.generateRandomAddress1());
+//   print(RandomAddresses.generateRandomAddress2());
+//   // print(RandomAddresses.generateRandomCity());
+//   // print(RandomAddresses.generateRandomState());
+//   // print(RandomAddresses.generateRandomPostalCode());
+//   // print(RandomAddresses.generateRandomLatitude());
+//   // print(RandomAddresses.generateRandomLongitude());
+//   // print(RandomAddresses.getRandomAddressByPostalCode(postalCode: '12345'));
+//   // print(RandomAddresses.getRandomAddressByCity(city: 'New York'));
+//   // print(RandomAddresses.getRandomAddressByState(state: 'New York'));
+//   // print(
+//   //     RandomAddresses.getRandomAddressByStreetAddress(address1: '123 Main St'));
+// }
