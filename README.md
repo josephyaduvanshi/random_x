@@ -47,7 +47,7 @@ Text("RandomX The Library For All Of Your Random Needs"),
   - [Random UserAgent](#random-useragent)
   - **And There is a whole lot Much More to explore....**
 - [Contributing](#contributing)
-- [Project Created And Maintained By)(#project-created-and-maintained-by)
+- [Project Created And Maintained By](#project-created-and-maintained-by)
 - [Donate](#donate)
 - [Active Contributors](#active-contributors)
 - [Copyright-and-license](#copyright-and-license)
