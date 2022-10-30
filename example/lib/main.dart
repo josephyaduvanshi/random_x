@@ -1,9 +1,27 @@
+/*
+ * Copyright 2022 Joseph Yaduvanshi. All rights reserved.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * You may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ * This file is part of the Random_X library.
+ * The RandomX library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY.
+ *  * Author: Joseph Yaduvanshi
+ */
+
 import 'package:example/routes/routes.dart';
 import 'package:example/utils/custom_button.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:random_x/random_x.dart';
 
+import 'pages/next_examples.dart';
 import 'utils/avatar_widget.dart';
 
 void main() {
@@ -23,6 +41,7 @@ class RandomXExampleApp extends StatelessWidget {
       ),
       routes: {
         Routes.homeRoute: (context) => const HomePage(),
+        Routes.nextExamples: (context) => const NextExamplesPageRandomX(),
       },
     );
   }
@@ -107,7 +126,8 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
             ),
-           /// Creating a button with a splash effect.
+
+            /// Creating a button with a splash effect.
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: CustomButtonWithSplash(
@@ -1122,7 +1142,12 @@ class _HomePageState extends State<HomePage> {
                         height: 12,
                       ),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () async {
+                          await Navigator.pushNamed(
+                            context,
+                            Routes.nextExamples,
+                          );
+                        },
                         child: const Text(
                           "Click Here To Check Other Examples =>",
                           textScaleFactor: 1.16,
@@ -1139,3 +1164,9 @@ class _HomePageState extends State<HomePage> {
     );
   }
 }
+/*
+* I know we can optimize this code alot by creating separate widgets 
+* and using them in the main widget but 
+* I just wanted to show you how to use the package in a simple way.
+* After all it's just an example.
+*/

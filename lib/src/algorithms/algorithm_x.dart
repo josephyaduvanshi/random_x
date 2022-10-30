@@ -1,6 +1,5 @@
 library algorithm_x;
 
-export '../algorithms/colors/random_colors.dart';
 export '../algorithms/user_agents/random_useragent.dart';
 export '../algorithms/misc/random_char_string.dart';
 export '../algorithms/misc/random_word.dart';

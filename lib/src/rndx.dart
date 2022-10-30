@@ -1,4 +1,6 @@
 import 'dart:math';
+import 'package:flutter/material.dart';
+
 import 'algorithms/algorithm_x.dart';
 
 /// Defining type of user agent.
@@ -573,14 +575,6 @@ mixin RndX {
   ///   count (int): The number of hex color codes to generate. Defaults to 1
   ///   uniqueList (bool): If true, the list will contain unique colors. If false, the list may contain
   /// duplicate colors. Defaults to true
-  static generateRandomHexColorCode({
-    int count = 1,
-    bool uniqueList = true,
-  }) =>
-      generateRandomHexColorCode_(
-        count: count,
-        uniqueList: uniqueList,
-      );
 
   /// It generates a random pseudo word.
   ///
@@ -1038,6 +1032,47 @@ mixin RndX {
         fileExtension: fileExtension,
         rating: rating,
       );
+
+  /// Generating a Random() color from the list of primary colors.
+  static Color get randomPrimaryColor {
+    return Colors.primaries[Random().nextInt(Colors.primaries.length)];
+  }
+
+  /// Generating a Random() accent color from the list of accent colors.
+  static Color get randomAccentColor {
+    return Colors.accents[Random().nextInt(Colors.accents.length)];
+  }
+
+  /// Generating a Random() color.
+  static Color get randomColor {
+    return Color.fromARGB(Random().nextInt(255), Random().nextInt(255),
+        Random().nextInt(255), Random().nextInt(255));
+  }
+
+  /// Generating a Random() color with alpha.
+  static Color get randomColorWithAlpha {
+    return Color.fromARGB(Random().nextInt(255), Random().nextInt(255),
+            Random().nextInt(255), Random().nextInt(255))
+        .withAlpha(Random().nextInt(255));
+  }
+
+  /// Generating a Random() color with opacity.
+  static Color get randomColorWithOpacity {
+    return Color.fromARGB(Random().nextInt(255), Random().nextInt(255),
+        Random().nextInt(255), Random().nextInt(255));
+  }
+
+  /// Generating a Random() color with opacity and red.
+  static Color get randomColorWithOpacityAndRed {
+    return Color.fromARGB(Random().nextInt(255), Random().nextInt(255),
+        Random().nextInt(255), Random().nextInt(255));
+  }
+
+  /// Generating a Random() color with opacity and green.
+  static Color get randomColorWithOpacityAndGreen {
+    return Color.fromARGB(Random().nextInt(255), Random().nextInt(255),
+        Random().nextInt(255), Random().nextInt(255));
+  }
 
   /// It returns the json url of the avatar.
   static String getavatarJsonUrl() => Gravatar().jsonUrl();
