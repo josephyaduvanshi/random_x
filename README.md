@@ -39,6 +39,7 @@ Text("RandomX The Library For All Of Your Random Needs"),
 - [Why use random_x?](#why-use-random_x?)
 - [RandomX Features](#randomx-features)
   - [Complete User Details](#complete-user-details)
+  - [Random Colors](#random-colors)
   - [Random String](#random-string)
   - [Random Credit Cards](#random-credit-cards)
   - [Random UUID](#random-uuid)
@@ -123,6 +124,68 @@ Row(children:[
    ++ many more....
 ],)
 ```
+
+## Random Colors
+
+```dart
+          /// Generating a random color and applying it to the text.
+          Text(
+            "Generate Random Color",
+            style: TextStyle(
+              color: RndX.randomColor,
+            ),
+          ),
+
+          /// Generating a random color with alpha.
+          Text(
+            "Generate Random Color With Alpha",
+            style: TextStyle(
+              color: RndX.randomColorWithAlpha,
+            ),
+          ),
+
+          /// Generating a random color with random opacity.
+          Text(
+            "Generate Random Color With Random Opacity",
+            style: TextStyle(
+              color: RndX.randomColorWithOpacity,
+            ),
+          ),
+
+          /// Generating a random color with random opacity and greenish color.
+          Text(
+            "Generate Random Color With Random Opacity Greenish",
+            style: TextStyle(
+              color: RndX.randomColorWithOpacityAndGreen,
+            ),
+          ),
+
+          /// Generating a random color with random opacity and greenish.
+          Text(
+            "Generate Random Color With Random Opacity Redish",
+            style: TextStyle(
+              color: RndX.randomColorWithOpacityAndGreen,
+            ),
+          ),
+
+          /// Generating a random primary color and applying it to the text.
+          Text(
+            "Generate Random Primary Color",
+            style: TextStyle(
+              color: RndX.randomPrimaryColor,
+            ),
+          ),
+
+          /// Generating a random accent color.
+          Text(
+            "Generate Random Accent Color",
+            style: TextStyle(
+              color: RndX.randomAccentColor,
+            ),
+          ),
+
+```
+
 
 ## Random Strings
 
