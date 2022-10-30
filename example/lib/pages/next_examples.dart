@@ -156,6 +156,7 @@ class _NextExamplesPageRandomXState extends State<NextExamplesPageRandomX> {
                       child: Divider(),
                     ),
                     CustomButtonWithSplash(
+                                   colorLightMode: RndX.randomPrimaryColor,
                       height: 30,
                       onTap: () {
                         setState(() {});

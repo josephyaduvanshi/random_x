@@ -18,6 +18,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:example/utils/custom_button.dart';
+import 'package:random_x/random_x.dart';
 
 class CustomTemplate extends StatelessWidget {
   final String title;
@@ -85,6 +86,7 @@ class CustomTemplate extends StatelessWidget {
                 child: Divider(),
               ),
               CustomButtonWithSplash(
+                colorLightMode: RndX.randomPrimaryColor,
                 height: 30,
                 onTap: onPressed,
                 title: buttonTitle,
