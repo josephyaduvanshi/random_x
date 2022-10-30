@@ -17,14 +17,19 @@
 
 import 'package:example/routes/routes.dart';
 import 'package:example/utils/custom_button.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:random_x/random_x.dart';
 
+import 'firebase_options.dart';
 import 'pages/next_examples.dart';
 import 'utils/avatar_widget.dart';
 
-void main() {
+void main() async {
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const RandomXExampleApp());
 }
 
