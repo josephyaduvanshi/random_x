@@ -1,6 +1,6 @@
 name: random_x
 description: A Dart Library for all of your random needs you'll ever require in your projects.l
-version: 0.2.5
+version: 0.3.0
 repository: https://github.com/josephyaduvanshi/random_x
 homepage: https://github.com/josephyaduvanshi/random_x
 
@@ -17,6 +17,16 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+
+false_secrets:
+  - /example/lib/firebase_options.dart
+  - /example/package.json
+  - /example/package-lock.json
+  - /example/firebase.json
+  - /example/android/app/google-services.json
+  - /example/ios/Runner/GoogleService-Info.plist
+  - /example/macos/Runner/GoogleService-Info.plist
+  - /example/web/index.html
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
