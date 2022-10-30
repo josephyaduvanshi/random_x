@@ -12,3 +12,8 @@
 - Some Minor Code Fixes
 - Added Random Color (Which I had Forgotten to Add😅)
 - Updated Readme File
+
+## [0.3.1] - Oct 30, 2022
+
+- Example Updated with Random Colors in Buttons
+- Updated Readme File

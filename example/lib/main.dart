@@ -136,7 +136,7 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 12.0),
               child: CustomButtonWithSplash(
-                colorLightMode: RndX.randomPrimaryColor,
+                  colorLightMode: RndX.randomPrimaryColor,
                   height: 30,
                   onTap: () {
                     setState(() {
