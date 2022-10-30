@@ -23,7 +23,7 @@
 
 ---
 
-[**random_x**](https://pub.dev/packages/random_x) is a 100% free Flutter open-source minimalist Library built with <a href="https://dart.dev/" target="_blank">Flutter SDK</a> to make Flutter development easier and more joyful than ever.
+[**random_x**](https://pub.dev/packages/random_x) is a 100% free Dart open-source minimalist Library built with <a href="https://dart.dev/" target="_blank">Dart SDK</a> to make Flutter development easier and more joyful than ever.
 
 ```dart
 Text("RandomX The Library For All Of Your Random Needs"),
