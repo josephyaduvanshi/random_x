@@ -31,6 +31,26 @@ Text("RandomX The Library For All Of Your Random Needs"),
 
 ---
 
+# Table of contents
+
+- [Getting Started](#getting-started)
+- [Usage](#usage)
+- [Why use random_x?](#why-use-random_x?)
+- [RandomX Features](#randomx-features)
+  - [Complete User Details](#complete-user-details)
+  - [Random String](#random-string)
+  - [Random Credit Cards](#random-credit-cards)
+  - [Random UUID](#random-uuid)
+  - [Random Name](#random-name)
+  - [Random Addresses](#random-Addresses)
+  - [Random UserAgent](#random-useragent)
+  - [*And There is a whole lot Much More to explore*]
+- [Contributing](#contributing)
+- [Project Created & Maintained By)(#project-created-&-maintained-by)
+- [Donate](#donate)
+- [Active Contributors](#active-contributors)
+- [Copyright-and-license](#copyright-and-license)
+
 ## Getting started
 
 In the `pubspec.yaml` of your flutter project, add the following dependency:
@@ -49,6 +69,21 @@ import 'package:random_x/random_x.dart';
 
 ---
 
+# Usage
+
+`Random_X` is a _Random Library_ For all of your random needs for your projects that you'll ever need(possibly).
+Include it in your `build` method like:
+
+```dart
+Text(RndX.generateName()),
+Text(RndX.randomSSN(withdashes: true)),
+```
+
+It also offers several configurable parameters in a variety of functions, which you can utilize and tailor to your needs.
+If you don't want the customization, I've given default values for each functions.
+
+---
+
 ## Why use random_x?
 
 random_x is known for :
@@ -63,6 +98,91 @@ random_x is known for :
 <a href="https://www.buymeacoffee.com/josefyaduvanshi"><img src="https://storiesfrompalestine.info/wp-content/uploads/2020/09/BuyMeACoffee_blue@2x.png"  width="650" align="center" alt="RandomX"></a>
 
 ---
+
+## RandomX Features
+
+There are lots and lots of features included in the library which is practically messy to explain all here but I will try to give you an glimpse of some of an amazing features of the **Package**.
+
+## Complete User Details
+
+<img src="https://github.com/josephyaduvanshi/images/blob/main/Screen%20Recording%202022-10-31%20at%2012.16.42%20AM%20(1).gif?raw=true" align = "right" height = "300px">
+
+```dart
+Row(children:[
+   Text(RndX.randomCompletePersonDetails().name),
+   Text(RndX.randomCompletePersonDetails().gender),
+   Text(RndX.randomCompletePersonDetails().race),
+   Text(RndX.randomCompletePersonDetails().religion),
+   Text(RndX.randomCompletePersonDetails().birthDay),
+   ++ many more....
+],)
+```
+
+## Random Strings
+
+```dart
+Text(RndX.randomString(type: RandomCharStringType.alphaNumerical, length: 10)),
+The parameters are type and Length which you can easily customize as per your needs.
+```
+
+## Random Credit Cards
+
+```dart
+Row(
+      children: [
+        Text(RndX.randomFullCreditCard().ccn),
+        Text(RndX.randomFullCreditCard().expiryDate),
+        Text(RndX.randomFullCreditCard().cvv),
+        Text(RndX.randomFullCreditCard().cardType),
+
+      ],
+    )
+```
+
+## Random UUID
+
+```dart
+   Text(RndX.genUUID()),
+```
+It generated version 4 of UUID with very subtle algoritm.
+
+## Random Name
+
+```dart
+Text(RndX.generateName()),
+```
+
+## Random Addresses
+
+```dart
+ Row(
+      children: [
+        Text(RndX.randomAddress().address1),
+        Text(RndX.randomAddress().address2),
+        Text(RndX.randomAddress().city),
+        Text(RndX.randomAddress().postalCode),
+        Text(RndX.randomAddress().state),
+        Text(RndX.randomAddress().coordinates.lat.toString()),
+        Text(RndX.randomAddress().coordinates.lng.toString()),
+      ],
+    );
+```
+
+You can get random USA addresses using randomAddress function and then using the same instance to access the other instances of addresses.
+
+## Random UserAgent
+
+```dart
+Row(
+      children: [
+        Text(RndX.getRandomUA()),
+        Text(RndX.getRandomUA(count: 4, type: UserAgentType.macOs), ),
+        Text(RndX.getRandomUA(count: 4, type: UserAgentType.mobile), ),
+      ],
+    );
+```
+You can easily generate random UA with custom configuration as well as shown above, there are few more parameters more there you can explore yourselves.
+
 
 ## Contributing
 
