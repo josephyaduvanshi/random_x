@@ -1,3 +1,3 @@
-## 0.0.1
+## [0.1.0] - Oct 30, 2022
 
-* TODO: Describe initial release.
+- Initial Release In Production❤️

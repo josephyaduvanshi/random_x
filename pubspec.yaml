@@ -1,6 +1,8 @@
-name: rndx
-description: A new Flutter package project.
-version: 0.0.1
+name: random_x
+description: A Dart Library for all of your random needs you'll ever require in your projects.l
+version: 0.1.0
+repository: https://github.com/josephyaduvanshi/random_x
+homepage: https://github.com/josephyaduvanshi/random_x
 
 environment:
   sdk: ">=2.18.2 <3.0.0"

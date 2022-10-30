@@ -328,8 +328,3 @@ class CardGenerator {
     return cardNumber;
   }
 }
-
-void main() {
-  print(CardGenerator.generateFullCC()._cvv);
-  // print(CardGenerator.generateBulkFullCC());
-}
