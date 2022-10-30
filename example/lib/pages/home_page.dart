@@ -9,7 +9,9 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('RandomX Example'),
       ),
-      body: Column(),
+      body: Column(
+        children: [],
+      ),
     );
   }
 }

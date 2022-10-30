@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:crypto/crypto.dart';
 
-import '../../random_x.dart';
+import '../../../random_x.dart';
 
 class Gravatar {
   /// Declaring two variables.

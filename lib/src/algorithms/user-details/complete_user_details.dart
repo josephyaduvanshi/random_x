@@ -1,6 +1,6 @@
 // ignore_for_file: unused_element
 
-import '../../random_x.dart';
+import '../../../random_x.dart';
 
 class CompleteUserDetailsModel {
   /// A model class for the complete user details.

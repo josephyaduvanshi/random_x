@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import '../../database/dictionary.dart';
-import '../../random_x.dart';
+import '../../../random_x.dart';
 
 class RandomUA {
   /// It returns a random user agent from the list of user agents.

@@ -17,4 +17,4 @@
 
 library random_x;
 
-export 'rndx.dart';
+export 'src/rndx.dart';

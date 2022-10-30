@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import '../../random_x.dart';
+import '../../../random_x.dart';
 
 class RandomCreditCards {
   /// A private variable.
