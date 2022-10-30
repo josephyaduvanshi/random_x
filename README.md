@@ -34,6 +34,7 @@ Text("RandomX The Library For All Of Your Random Needs"),
 # Table of contents
 
 - [Getting Started](#getting-started)
+- [Example App](#example-app)
 - [Usage](#usage)
 - [Why use random_x?](#why-use-random_x?)
 - [RandomX Features](#randomx-features)
@@ -69,7 +70,13 @@ import 'package:random_x/random_x.dart';
 
 ---
 
-# Usage
+## [Example App](https://randomx-b7939.web.app/#/)
+
+You can easily check our few features by accessing our [Example App](https://randomx-b7939.web.app/#/)
+
+---
+
+## Usage
 
 `Random_X` is a _Random Library_ For all of your random needs for your projects that you'll ever need(possibly).
 Include it in your `build` method like:
@@ -117,6 +124,7 @@ Row(children:[
    ++ many more....
 ],)
 ```
+---
 
 ## Random Strings
 
@@ -138,6 +146,7 @@ Row(
       ],
     )
 ```
+---
 
 ## Random UUID
 
@@ -146,11 +155,14 @@ Row(
 ```
 It generated version 4 of UUID with very subtle algoritm.
 
+---
+
 ## Random Name
 
 ```dart
 Text(RndX.generateName()),
 ```
+---
 
 ## Random Addresses
 
@@ -170,6 +182,8 @@ Text(RndX.generateName()),
 
 You can get random USA addresses using randomAddress function and then using the same instance to access the other instances of addresses.
 
+---
+
 ## Random UserAgent
 
 ```dart
@@ -183,6 +197,7 @@ Row(
 ```
 You can easily generate random UA with custom configuration as well as shown above, there are few more parameters more there you can explore yourselves.
 
+---
 
 ## Contributing
 
