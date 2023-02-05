@@ -6,8 +6,23 @@
 version: 2
 updates:
   - package-ecosystem: "pub"
+    package: crypto
     schedule:
       interval: "daily"
     directory: "/"
-    schedule-ignore-failure: false
-    autoupdate: true
+  - package-ecosystem: "pub"
+    package: flutter
+    schedule:
+      interval: "daily"
+    directory: "/"
+  - package-ecosystem: "pub"
+    package: flutter_test
+    schedule:
+      interval: "daily"
+    directory: "/"
+  - package-ecosystem: "pub"
+    package: flutter_lints
+    schedule:
+      interval: "daily"
+    directory: "/"
+
