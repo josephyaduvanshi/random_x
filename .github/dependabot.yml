@@ -5,19 +5,23 @@
 
 version: 2
 updates:
-  - package: crypto
-    schedule:
-      interval: "weekly"
-    directory: "/"
-  - package: flutter
+  - package-ecosystem: "dart"
+    package: crypto
     schedule:
       interval: "daily"
     directory: "/"
-  - package: flutter_test
+  - package-ecosystem: "dart"
+    package: flutter
     schedule:
       interval: "daily"
     directory: "/"
-  - package: flutter_lints
+  - package-ecosystem: "dart"
+    package: flutter_test
+    schedule:
+      interval: "daily"
+    directory: "/"
+  - package-ecosystem: "dart"
+    package: flutter_lints
     schedule:
       interval: "daily"
     directory: "/"
