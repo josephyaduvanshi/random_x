@@ -5,8 +5,9 @@
 
 version: 2
 updates:
-  - package-ecosystem: pub
-    package: crypto
+
+  - package-ecosystem: "pub"
     directory: "/"
     schedule:
+      # Check for updates to GitHub Actions every weekday
       interval: "daily"
